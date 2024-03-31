@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 cat << "EOF"
-B2 Cloud Storage Backup script for RHEL 8+/Ubuntu 20.04+/Debian 10+
+B2 Cloud Storage Backup script for RHEL 8+/Ubuntu 22.04+/Debian 11+
 Author: M1Screw
 Github: https://github.com/M1Screw/Airport-toolkit
 Usage: 

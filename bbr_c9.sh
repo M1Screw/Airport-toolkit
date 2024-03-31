@@ -1,13 +1,13 @@
-#!/usr/bin/bash
+#!/bin/bash
 cat << "EOF"
-BBR configuration script for RHEL/CentOS Stream 9 x86_64                                                           
+BBR configuration script for RHEL/CentOS Stream 9/Rocky Linux/AlmaLinux x86_64                                                           
 Author: M1Screw
 Github: https://github.com/M1Screw/Airport-toolkit
 Usage: 
 ./bbr_c9.sh mainline --> Install mainline kernel and enable BBR
 ./bbr_c9.sh bbr --> Enable BBR
 ./bbr_c9.sh status --> Check BBR and kernel status
-./bbr_c9.sh update --> Update the mainline/longterm kernel                             
+./bbr_c9.sh update --> Update the mainline kernel                             
 EOF
 
 [ $(id -u) != "0" ] && { echo "Error: You must be root to run this script!"; exit 1; }
@@ -86,16 +86,19 @@ if [[ $1 == "status" ]]; then
     do_status_check
     exit 0
 fi
+
 if [[ $1 == "bbr" ]]; then
     do_enable_bbr
     exit 0
 fi
+
 if [[ $1 == "update" ]]; then
     do_update_kernel
     exit 0
 fi
-do_elrepo
+
 if [[ $1 == "mainline" ]]; then
+    do_elrepo
     do_kernel
     do_headers
     do_tools

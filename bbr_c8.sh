@@ -1,6 +1,6 @@
-#!/usr/bin/bash
+#!/bin/bash
 cat << "EOF"
-BBR configuration script for RHEL/CentOS Stream 8 x86_64                                                                
+BBR configuration script for RHEL/Rocky Linux/AlmaLinux 8 x86_64                                                                
 Author: M1Screw
 Github: https://github.com/M1Screw/Airport-toolkit
 Usage:
@@ -105,15 +105,19 @@ if [[ $1 == "status" ]]; then
     do_status_check
     exit 0
 fi
+
 if [[ $1 == "bbr" ]]; then
     do_enable_bbr
     exit 0
 fi
+
 if [[ $1 == "update" ]]; then
     do_update_kernel
     exit 0
 fi
+
 do_elrepo
+
 if [[ $1 == "longterm" ]]; then
     do_kernel_lt
     do_headers_lt
@@ -121,6 +125,7 @@ if [[ $1 == "longterm" ]]; then
     do_enable_bbr
     do_reboot
 fi
+
 if [[ $1 == "mainline" ]]; then
     do_kernel
     do_headers
