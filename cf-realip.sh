@@ -1,5 +1,5 @@
 #!/bin/bash
-cloudflare_ip_file=${1:-/etc/nginx/cloudflare}
+cloudflare_ip_file=${1:-/etc/nginx/cloudflare/realip}
 
 echo "#Cloudflare" > $cloudflare_ip_file;
 echo "" >> $cloudflare_ip_file;
