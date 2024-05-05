@@ -123,7 +123,9 @@ do_upload_b2(){
     b2 upload_file $b2_bucket_name $(pwd)/$db_file_name $db_file_name
     b2 upload_file $b2_bucket_name $(pwd)/$db_file_hash $db_file_hash
     rm $website_file_name
+    rm $website_file_hash
     rm $db_file_name
+    rm $db_file_hash
 }
 
 if [[ $1 == "init" ]]; then
